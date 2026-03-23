@@ -1,0 +1,8 @@
+@use "abstracts/variables" as *;
+
+
+h1 {
+    color: $primary-color;
+    letter-spacing: 5px;
+    border-bottom: solid;
+}
