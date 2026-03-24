@@ -1,7 +1,76 @@
-h1 {
-  color: rgb(41, 41, 98);
-  letter-spacing: 5px;
-  border-bottom: solid;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 100px;
+  height: 200px;
+  width: 200px;
+  background-image: url("/src/img/altavista.svg");
+  background-size: contain;
+}
+
+input {
+  height: 25px;
+  width: 300px;
+  background-color: rgb(221, 245, 255);
+  border-radius: 7px;
+  border: solid 2px rgb(63, 63, 146);
+  color: rgb(63, 63, 63);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+
+.search i {
+  cursor: pointer;
+}
+
+.categories {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(63, 63, 63);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+  cursor: pointer;
+  gap: 20px;
+  margin-top: auto;
+  width: 100%;
+  background: RGB(221, 245, 255);
+  background: radial-gradient(circle, rgb(221, 245, 255) 0%, rgb(63, 63, 146) 100%);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.info, .download, .advertising, .contact {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+p {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=styles.css.map */
