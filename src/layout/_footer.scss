@@ -15,10 +15,47 @@
     background: RGB(221, 245, 255);
     background: radial-gradient(circle,rgba(221, 245, 255, 1) 0%, rgba(63, 63, 146, 1) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5); 
+     @include mobile {
+    height: auto;
+    padding: 15px 10px;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
 }
+
 
 .info, .download, .advertising, .contact{
     @include category-style;
     flex-direction: row-reverse;
     align-items: center;
+}
+
+
+/* Easter egg */
+
+.categories {
+    position: relative;
+    transition: height 0.6s cubic-bezier(0.47, 0, 0.745, 0.7);
+    overflow: hidden;
+    height: 50px; //
+
+    &:active {
+        height: 250px;
+        animation: shake-impact 0.2s ease-in-out infinite; 
+
+        .info { transform: translate(60px, 80px) rotate(20deg); }
+        .download { transform: translate(20px, 90px) rotate(-15deg); }
+        .advertising { transform: translate(-20px, 85px) rotate(10deg); }
+        .contact { transform: translate(-60px, 80px) rotate(-25deg); }
+        
+        .info, .download, .advertising, .contact {
+            opacity: 1;
+            filter: blur(0px);
+            z-index: 10;
+        }
+    }
+}
+
+.info, .download, .advertising, .contact {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
 }

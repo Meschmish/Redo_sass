@@ -4,10 +4,14 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +21,62 @@ p {
   text-decoration: underline;
 }
 
+/* Easter egg */
+@keyframes run-loop-and-stop {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(1200px, -50%);
+    opacity: 1;
+  }
+  41% {
+    transform: translate(-1200px, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
 .logo {
   margin-top: 100px;
   height: 200px;
   width: 200px;
   background-image: url("/src/img/altavista.svg");
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  /* Easter egg */
+}
+.logo i.fa-person-running {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: #1590b5;
+  opacity: 0;
+  pointer-events: none;
+}
+.logo:active {
+  background-image: none !important;
+}
+.logo:active i.fa-person-running {
+  animation: run-loop-and-stop 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@media (max-width: 650px) {
+  .logo {
+    margin-top: 40px;
+    height: 120px;
+    width: 120px;
+  }
+  .logo i.fa-person-running {
+    font-size: 60px;
+  }
 }
 
 input {
@@ -34,6 +88,11 @@ input {
   color: rgb(63, 63, 63);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: medium;
+}
+@media (max-width: 650px) {
+  input {
+    width: 70vw;
+  }
 }
 
 .search {
@@ -69,6 +128,14 @@ input {
   background: radial-gradient(circle, rgb(221, 245, 255) 0%, rgb(63, 63, 146) 100%);
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 }
+@media (max-width: 650px) {
+  .categories {
+    height: auto;
+    padding: 15px 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
 
 .info, .download, .advertising, .contact {
   display: flex;
@@ -76,6 +143,39 @@ input {
   gap: 2px;
   flex-direction: row-reverse;
   align-items: center;
+}
+
+/* Easter egg */
+.categories {
+  position: relative;
+  transition: height 0.6s cubic-bezier(0.47, 0, 0.745, 0.7);
+  overflow: hidden;
+  height: 50px;
+}
+.categories:active {
+  height: 250px;
+  animation: shake-impact 0.2s ease-in-out infinite;
+}
+.categories:active .info {
+  transform: translate(60px, 80px) rotate(20deg);
+}
+.categories:active .download {
+  transform: translate(20px, 90px) rotate(-15deg);
+}
+.categories:active .advertising {
+  transform: translate(-20px, 85px) rotate(10deg);
+}
+.categories:active .contact {
+  transform: translate(-60px, 80px) rotate(-25deg);
+}
+.categories:active .info, .categories:active .download, .categories:active .advertising, .categories:active .contact {
+  opacity: 1;
+  filter: blur(0px);
+  z-index: 10;
+}
+
+.info, .download, .advertising, .contact {
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
 }
 
 .header {
@@ -98,6 +198,14 @@ input {
   background: RGBA(63, 63, 146, 1);
   background: radial-gradient(circle, rgb(63, 63, 146) 0%, rgb(221, 245, 255) 100%);
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 650px) {
+  .header {
+    height: auto;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
