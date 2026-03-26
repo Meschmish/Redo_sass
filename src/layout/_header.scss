@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+    @include category-style;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
+    @include font-style;
+    cursor: pointer;
+    width:100%;
+    background: RGBA(63, 63, 146, 1);
+    background: radial-gradient(circle,rgba(63, 63, 146, 1) 0%, rgba(221, 245, 255, 1) 100%);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5); 
+}

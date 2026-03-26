@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+input {
+    height: 30px;
+    width: 300px;
+    background-color: $secondary-color;
+    border-radius: 7px;
+    border: solid 2px $primary-color;
+    @include font-style;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.search i {
+    cursor: pointer;
+}
+
+#audio {
+    margin-left: -30px;
+}
+
