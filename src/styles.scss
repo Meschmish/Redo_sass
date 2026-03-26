@@ -1,15 +1,15 @@
-@use "abstracts/mixins" as *;
-@use "abstracts/variables" as *;
+@use "../src/abstracts/mixins" as *;
+@use "../src/abstracts/variables" as *;
 
 
-@use "base/reset";
-@use "base/typography";
+@use "../src/base/reset";
+@use "../src/base/typography";
 
-@use "components/logo";
-@use "components/search-bar";
+@use "../src/components/logo";
+@use "../src/components/search-bar";
 
-@use "layout/footer";
+@use "../src/layout/footer";
 
-@use "layout/header"
+@use "../src/layout/header"
 
 
