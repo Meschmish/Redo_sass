@@ -49,9 +49,9 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  cursor: pointer;
-  /* Easter egg */
 }
+
+/* Easter egg */
 .logo i.fa-person-running {
   position: absolute;
   top: 50%;
