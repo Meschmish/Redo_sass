@@ -22,19 +22,21 @@ p {
 }
 
 /* Easter egg */
-@keyframes run-away {
+@keyframes run-loop-and-stop {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
-  10% {
-    transform: translate(-60%, -55%) rotate(-10deg);
+  40% {
+    transform: translate(1200px, -50%);
+    opacity: 1;
   }
-  25% {
-    transform: translate(-40%, -45%) rotate(10deg);
+  41% {
+    transform: translate(-1200px, -50%);
+    opacity: 0;
   }
   100% {
-    transform: translate(2500px, -50%) rotate(5deg);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
@@ -47,7 +49,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  cursor: default;
+  cursor: pointer;
   /* Easter egg */
 }
 .logo i.fa-person-running {
@@ -56,7 +58,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 100px;
-  color: #b8d1e3;
+  color: #1590b5;
   opacity: 0;
   pointer-events: none;
 }
@@ -64,8 +66,7 @@ p {
   background-image: none !important;
 }
 .logo:active i.fa-person-running {
-  opacity: 1;
-  animation: run-away 2.5s ease-in forwards;
+  animation: run-loop-and-stop 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @media (max-width: 650px) {
   .logo {
