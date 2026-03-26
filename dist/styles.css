@@ -49,9 +49,8 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  /* Easter egg */
 }
-
-/* Easter egg */
 .logo i.fa-person-running {
   position: absolute;
   top: 50%;
@@ -128,12 +127,19 @@ input {
   background: radial-gradient(circle, rgb(221, 245, 255) 0%, rgb(63, 63, 146) 100%);
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 }
+.categories .categories > * {
+  flex-shrink: 1;
+  min-width: 0;
+  white-space: nowrap;
+  font-size: 12px;
+}
 @media (max-width: 650px) {
   .categories {
     height: auto;
-    padding: 15px 10px;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 50px;
+    flex-wrap: nowrap;
+    gap: 5px;
+    overflow: hidden;
   }
 }
 
